@@ -1,0 +1,12 @@
+dir /. 0755 0 0
+dir /dev 0755 0 0
+dir /dev/pts 0755 0 0
+dir /proc 0755 0 0
+dir /sys 0755 0 0
+dir /root 0700 0 0
+dir /bin 0755 0 0
+slink /sbin bin 0755 0 0
+dir /etc 0755 0 0
+nod /dev/console 0600 0 0 c 5 1
+// niceties
+file /etc/fstab fstab 0644 0 0

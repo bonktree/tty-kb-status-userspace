@@ -1,0 +1,8 @@
+nod /dev/tty1 0640 0 0 c 4 1
+nod /dev/tty2 0640 0 0 c 4 2
+nod /dev/tty3 0640 0 0 c 4 3
+nod /dev/tty4 0640 0 0 c 4 4
+
+// are those two guaranteed to work?
+nod /dev/ttyS0 0640 0 0 c 4 64
+nod /dev/ttyS1 0640 0 0 c 4 65

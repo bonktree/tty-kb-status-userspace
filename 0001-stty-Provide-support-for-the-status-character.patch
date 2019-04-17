@@ -1,0 +1,26 @@
+From cb105cf03cb45a08cea314b55f198b14b2ec2f82 Mon Sep 17 00:00:00 2001
+From: Arseny Maslennikov <ar@cs.msu.ru>
+Date: Sun, 19 Aug 2018 18:29:54 +0300
+Subject: [PATCH 1/2] stty: Provide support for the status character
+
+Signed-off-by: Arseny Maslennikov <ar@cs.msu.ru>
+---
+ coreutils/stty.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/coreutils/stty.c b/coreutils/stty.c
+index 424d909..3e43668 100644
+--- a/coreutils/stty.c
++++ b/coreutils/stty.c
+@@ -47,6 +47,8 @@
+ # define _POSIX_VDISABLE ((unsigned char) 0)
+ #endif
+ 
++#define VSTATUS 17
++
+ #define Control(c) ((c) & 0x1f)
+ /* Canonical values for control characters */
+ #ifndef CINTR
+-- 
+2.19.1
+

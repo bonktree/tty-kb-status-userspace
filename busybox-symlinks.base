@@ -1,0 +1,6 @@
+####################
+# /bin + a busybox installation in /bin + /init
+
+#include <base.list>
+slink /init bin/busybox 777 0 0
+file /bin/busybox busybox/busybox 755 0 0

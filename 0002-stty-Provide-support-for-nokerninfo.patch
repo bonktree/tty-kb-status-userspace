@@ -1,0 +1,45 @@
+From 4c99c19c1c688fb6863c5631cde727a3d5ab7d8f Mon Sep 17 00:00:00 2001
+From: Arseny Maslennikov <ar@cs.msu.ru>
+Date: Sun, 26 Aug 2018 20:50:39 +0300
+Subject: [PATCH 2/2] stty: Provide support for nokerninfo
+
+Signed-off-by: Arseny Maslennikov <ar@cs.msu.ru>
+---
+ coreutils/stty.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/coreutils/stty.c b/coreutils/stty.c
+index 3e43668..aa4926e 100644
+--- a/coreutils/stty.c
++++ b/coreutils/stty.c
+@@ -48,6 +48,7 @@
+ #endif
+ 
+ #define VSTATUS 17
++#define NOKERNINFO 0400000
+ 
+ #define Control(c) ((c) & 0x1f)
+ /* Canonical values for control characters */
+@@ -489,6 +490,9 @@ static const char mode_name[] ALIGN1 =
+ 	MI_ENTRY("flusho",   local,       SANE_UNSET | REV,  FLUSHO,     0 )
+ #ifdef EXTPROC
+ 	MI_ENTRY("extproc",  local,       SANE_UNSET | REV,  EXTPROC,    0 )
++#endif
++#ifdef NOKERNINFO
++	MI_ENTRY("nokerninfo", local,     SANE_SET | REV,  NOKERNINFO, 0 )
+ #endif
+ 	;
+ 
+@@ -654,6 +658,9 @@ static const struct mode_info mode_info[] = {
+ #ifdef EXTPROC
+ 	MI_ENTRY("extproc",  local,       SANE_UNSET | REV,  EXTPROC,    0 )
+ #endif
++#ifdef NOKERNINFO
++	MI_ENTRY("nokerninfo", local,     SANE_SET | REV,  NOKERNINFO, 0 )
++#endif
+ };
+ 
+ enum {
+-- 
+2.19.1
+

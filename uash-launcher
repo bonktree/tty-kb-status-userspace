@@ -1,0 +1,3 @@
+#!/bin/ash
+mountpoint -q /proc || mount -t proc proc /proc
+exec /bin/ash -c 'PS1="unshared [$$] \w \$ " unshare -pf --mount-proc /bin/ash'

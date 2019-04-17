@@ -1,0 +1,12 @@
+CC = gcc
+
+rule cc
+    command = $CC -Wall -Os -c $in -o $out
+
+rule ld
+    command = $CC -static $in -o $out
+
+build siginfo.o: cc siginfo.c
+build main.o: cc main.c
+
+build siginfo: ld siginfo.o main.o

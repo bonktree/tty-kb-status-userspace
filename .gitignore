@@ -1,0 +1,8 @@
+*.o
+.*.swp
+.*.swo
+**/.ninja_deps
+**/.ninja_log
+
+bb-build
+bb-src

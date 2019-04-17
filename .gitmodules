@@ -1,0 +1,4 @@
+[submodule "busybox"]
+	path = busybox
+	url = git://github.com/porrided/busybox
+	branch = stty-tks

@@ -1,0 +1,3 @@
+#include <busybox.list>
+file /bin/siginfo siginfo-test/siginfo 0755 0 0
+file /bin/uash uash-launcher 0755 0 0
